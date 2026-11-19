@@ -731,6 +731,27 @@ a.od-cena-suma { text-decoration: none; }
 
 .suhlas input { width: 18px; height: 18px; margin: 1px 0 0; flex: none; accent-color: var(--cyan); }
 
+.porucha-stav {
+    margin: 24px 0 0;
+    padding: 18px 24px;
+    border-radius: 20px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    scroll-margin-top: 24px;
+}
+
+.porucha-ok { background: var(--tint-zelena); color: var(--green-dark); }
+.porucha-chyba { background: #FCEBED; color: #B4232F; }
+
+.porucha-pasca {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
 .dokumenty {
     display: grid;
     grid-template-columns: 1fr 1fr;

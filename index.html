@@ -112,7 +112,7 @@
                     <a class="btn btn-modre" href="https://2026.nuo.sk/msprofi/televizia">Pozrieť balíky a programy</a>
                 </div>
                 <ul class="vyhody">
-                    <li><span class="vyhoda-ikona"><svg class="ikona" viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="15" x="2" y="7" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg></span><strong>Až 98 programov</strong>Balíky NUO Štart, NUO Základ, NUO Viac.</li>
+                    <li><span class="vyhoda-ikona"><svg class="ikona" viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="15" x="2" y="7" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg></span><strong>Až 97 programov</strong>Balíky NUO Štart, NUO Základ, NUO Viac.</li>
                     <li><span class="vyhoda-ikona"><svg class="ikona" viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></span><strong>HD obraz</strong>Programy v HD kvalite.</li>
                     <li><span class="vyhoda-ikona"><svg class="ikona" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg></span><strong>Pretáčanie a nahrávanie</strong>Preskočte reklamy alebo si reláciu uložte.</li>
                     <li><span class="vyhoda-ikona"><svg class="ikona" viewBox="0 0 24 24" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg></span><strong>V mobile aj tablete</strong>Aplikácia NUO TV pre <a href="https://play.google.com/store/apps/details?id=tv.fournetwork.android.nuo&amp;hl=sk">Android</a> aj <a href="https://apps.apple.com/sk/app/nuo-tv/id1350941114?l=sk">iOS</a>.</li>
@@ -230,17 +230,18 @@
                     </a>
                 </div>
                 <div class="porucha-obal">
-                    <form class="formular" id="porucha" action="#porucha" onsubmit="return false" hidden>
+                                        <form class="formular" id="porucha" action="#porucha" onsubmit="return false" hidden>
                         <h3>Nahlásiť poruchu</h3>
                         <div class="polia">
-                            <label>Meno a priezvisko<input type="text" name="meno" autocomplete="name" required></label>
-                            <label>Telefón<input type="tel" name="telefon" autocomplete="tel" required></label>
-                            <label>Adresa pripojenia<input type="text" name="adresa" autocomplete="street-address" required></label>
-                            <label>E-mail<input type="email" name="email" autocomplete="email"></label>
-                            <label class="cela">Číslo zmluvy <span class="nepovinne">nepovinné</span><input type="text" name="zmluva"></label>
-                            <label class="cela">Čo nefunguje?<textarea name="popis" rows="4" required></textarea></label>
+                            <label>Meno a priezvisko<input type="text" name="meno" autocomplete="name" maxlength="120" value="" required></label>
+                            <label>Telefón<input type="tel" name="telefon" autocomplete="tel" maxlength="40" value="" required></label>
+                            <label>Adresa pripojenia<input type="text" name="adresa" autocomplete="street-address" maxlength="200" value="" required></label>
+                            <label>E-mail<input type="email" name="email" autocomplete="email" maxlength="120" value=""></label>
+                            <label class="cela">Číslo zmluvy <span class="nepovinne">nepovinné</span><input type="text" name="zmluva" maxlength="60" value=""></label>
+                            <label class="cela">Čo nefunguje?<textarea name="popis" rows="4" maxlength="3000" required></textarea></label>
+                            <label class="porucha-pasca" aria-hidden="true">Web<input type="text" name="web" tabindex="-1" autocomplete="off"></label>
                         </div>
-                        <label class="suhlas"><input type="checkbox" name="suhlas" required><span>Oboznámil(a) som sa s <a href="https://msprofi.sk/wp-content/uploads/2025/04/003_Informacna-povinnost-Prevadzkovatela-cl.-13-KF.pdf">informáciami o spracúvaní osobných údajov</a>.</span></label>
+                        <label class="suhlas"><input type="checkbox" name="suhlas" value="1" required><span>Oboznámil(a) som sa s <a href="https://msprofi.sk/wp-content/uploads/2025/04/003_Informacna-povinnost-Prevadzkovatela-cl.-13-KF.pdf">informáciami o spracúvaní osobných údajov</a>.</span></label>
                         <button class="btn btn-ruzove" type="submit">Odoslať hlásenie</button>
                     </form>
                 </div>
