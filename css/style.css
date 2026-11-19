@@ -17,7 +17,7 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
 
 body {
     margin: 0;
@@ -85,8 +85,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .hr-mail { margin-left: auto; }
 
 .hlavicka {
-    position: relative;
-    z-index: 5;
+    position: sticky;
+    top: 0;
+    z-index: 30;
     background: #fff;
     border-bottom: 1px solid var(--border);
 }
@@ -983,7 +984,7 @@ a.od-cena-suma { text-decoration: none; }
 
 .kroky strong { display: block; margin-bottom: 4px; font-size: 18px; line-height: 24px; font-weight: 800; }
 
-.podstranka-bok { position: sticky; top: 24px; }
+.podstranka-bok { position: sticky; top: 100px; }
 
 .bok-karta {
     position: relative;
@@ -1111,6 +1112,7 @@ a.od-cena-suma { text-decoration: none; }
 
 @media (max-width: 600px) {
     .wrap { padding: 0 16px; }
+    html { scroll-padding-top: 84px; }
     .hlavicka .wrap { height: 64px; gap: 12px; }
     .horny-riadok { font-size: 13px; }
     .horny-riadok .ikona { display: none; }
