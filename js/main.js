@@ -42,4 +42,21 @@
             otvor(false);
         }
     }
+
+    var naVrch = document.querySelector('.na-vrch');
+    if (naVrch) {
+        var ukaz = function () {
+            var videt = window.pageYOffset > 600;
+            naVrch.classList.toggle('je-videt', videt);
+            naVrch.tabIndex = videt ? 0 : -1;
+        };
+
+        naVrch.addEventListener('click', function () {
+            var pokojne = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            window.scrollTo({ top: 0, behavior: pokojne ? 'auto' : 'smooth' });
+        });
+
+        window.addEventListener('scroll', ukaz, { passive: true });
+        ukaz();
+    }
 }());
