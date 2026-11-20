@@ -850,42 +850,42 @@ a.od-cena-suma { text-decoration: none; }
 .kontakty {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
+    padding: 44px 0;
+    border-radius: 28px;
+    background: var(--gray);
 }
 
 .kontakt {
-    position: relative;
-    z-index: 0;
-    overflow: hidden;
-    min-height: 270px;
-    padding: 32px 36px 36px;
-    border-radius: 28px;
-    color: #fff;
+    padding: 4px 44px;
+    color: var(--base);
 }
 
-.kontakt-ruzovy { background: var(--cyan); }
-.kontakt-modry { background: var(--blue); }
-.kontakt-sidlo { background: var(--gray); color: var(--base); }
+.kontakt + .kontakt { border-left: 1px solid #DDDDE8; }
 
-.kontakt-ikona {
-    position: absolute;
-    z-index: -1;
-    right: -56px;
-    bottom: -76px;
-    width: 270px;
-    height: 270px;
+.kontakt-znak {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 20px;
+    border-radius: 16px;
 }
 
-.kontakt-ruzovy .kontakt-ikona { fill: #A60086; }
-.kontakt-modry .kontakt-ikona { fill: #0090BE; }
-.kontakt-sidlo .kontakt-ikona { fill: #E8E8F1; }
+.kontakt-znak .ikona { width: 24px; height: 24px; }
+.kontakt-ruzovy .kontakt-znak { background: var(--tint-ruzova); color: var(--cyan); }
+.kontakt-modry .kontakt-znak { background: var(--tint-modra); color: #0090BE; }
+.kontakt-sidlo .kontakt-znak { background: var(--tint-zelena); color: #689C00; }
+.kontakt h3 { color: var(--muted); }
 
 .kontakt a { color: inherit; text-decoration: none; }
 .kontakt a:hover { text-decoration: underline; }
+.kontakt-ruzovy .kontakt-mail { color: var(--cyan); }
+.kontakt-modry .kontakt-mail { color: #0090BE; }
 
 .kontakt-telefon {
     display: block;
-    margin: 12px 0 8px;
+    margin: 6px 0 10px;
     font-size: clamp(30px, 3vw, 40px);
     line-height: 46px;
     font-weight: 800;
@@ -907,7 +907,7 @@ a.od-cena-suma { text-decoration: none; }
 .kontakt-mail .ikona { width: 18px; height: 18px; }
 
 .kontakt-adresa {
-    margin: 12px 0 0;
+    margin: 6px 0 0;
     font-size: 22px;
     line-height: 32px;
     font-weight: 700;
@@ -961,6 +961,10 @@ a.od-cena-suma { text-decoration: none; }
     left: 24px;
     right: 24px;
     border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 1360px) {
+    .paticka .paticka-spodok { justify-content: center; gap: 32px; }
 }
 
 .podstranka-hlava { padding: 38px 0 42px; background: var(--gray); }
@@ -1060,9 +1064,21 @@ a.od-cena-suma { text-decoration: none; }
 }
 
 .bok-karta p { margin: 0 0 24px; font-size: 16px; line-height: 24px; opacity: 0.92; }
-.bok-karta .btn { background: #fff; color: var(--cyan); text-align: left; }
+.bok-karta .btn {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 15px 20px;
+    background: #fff;
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--cyan);
+    text-align: left;
+}
+
 .bok-karta .btn:hover { background: var(--tint-ruzova); }
-.bok-karta .btn .ikona { color: var(--cyan); }
+.bok-karta .btn .ikona { flex: none; color: var(--cyan); }
 
 .tabulka-obal { margin: 8px 0 14px; border: 1px solid var(--border); border-radius: 20px; overflow-x: auto; }
 
@@ -1114,6 +1130,7 @@ a.od-cena-suma { text-decoration: none; }
     .menu.je-otvorene { display: flex; }
     .menu a:not(.btn) { padding: 14px 0; border-bottom: 1px solid var(--border); }
     .menu .btn { margin-top: 16px; }
+    .kontakt { padding: 4px 28px; }
 }
 
 @media (max-width: 1000px) {
@@ -1131,8 +1148,12 @@ a.od-cena-suma { text-decoration: none; }
     .dvojica .vyhody { order: 3; margin-top: 32px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .pokrytie-karty { grid-template-columns: 1fr; }
     .pokrytie-karta { min-height: 0; }
-    .kontakty { grid-template-columns: 1fr 1fr; }
-    .kontakt-sidlo { grid-column: 1 / -1; min-height: 0; }
+    .kontakty { grid-template-columns: 1fr 1fr; padding: 8px 36px; }
+    .kontakt { padding: 28px 0; }
+    .kontakt-ruzovy { padding-right: 36px; }
+    .kontakt-modry { padding-left: 36px; }
+    .kontakt-sidlo { grid-column: 1 / -1; border-top: 1px solid #DDDDE8; }
+    .kontakt + .kontakt-sidlo { border-left: 0; }
     .paticka-stlpce { grid-template-columns: 1fr 1fr; }
     .hero-riadok { flex-direction: column; align-items: flex-start; gap: 6px; }
     .hero-riadok p { text-align: left; }
@@ -1145,6 +1166,9 @@ a.od-cena-suma { text-decoration: none; }
 @media (max-width: 760px) {
     .dlazdice { grid-template-columns: 1fr; gap: 16px; }
     .dokumenty, .kontakty, .karty-zakaznik { grid-template-columns: 1fr; }
+    .kontakty { padding: 8px 28px; }
+    .kontakt-ruzovy, .kontakt-modry { padding: 28px 0; }
+    .kontakt + .kontakt { border-left: 0; border-top: 1px solid #DDDDE8; }
 }
 
 @media (max-width: 760px) {
@@ -1212,11 +1236,11 @@ a.od-cena-suma { text-decoration: none; }
     #firmy .od-cena-suma { font-size: min(34px, 9.4vw); }
     .dvojica-text .btn { width: 100%; }
     .porucha-obal .btn { width: 100%; }
-    .kontakt { min-height: 0; padding: 26px 24px 30px; border-radius: 22px; }
-    .kontakt-ikona { width: 190px; height: 190px; right: -40px; bottom: -54px; }
+    .kontakty { padding: 4px 24px; border-radius: 22px; }
+    .kontakt, .kontakt-ruzovy, .kontakt-modry { padding: 26px 0; }
     .kontakt-telefon { font-size: 34px; line-height: 40px; }
     .paticka-stlpce { grid-template-columns: 1fr; gap: 28px; padding-top: 44px; padding-bottom: 32px; }
-    .paticka .paticka-spodok { flex-direction: column; gap: 6px; }
+    .paticka .paticka-spodok { flex-direction: column; align-items: center; gap: 6px; text-align: center; }
     .paticka-spodok::before { left: 16px; right: 16px; }
     .podstranka-hlava { padding: 28px 0; }
     .podstranka-hlava h1 { font-size: 34px; }
@@ -1227,7 +1251,6 @@ a.od-cena-suma { text-decoration: none; }
     .tabulka { font-size: 15px; }
     .tabulka th, .tabulka td { padding: 12px; }
     .bok-karta { padding: 26px 24px 30px; border-radius: 22px; }
-    .bok-karta .btn { width: 100%; }
 }
 
 .na-vrch {
