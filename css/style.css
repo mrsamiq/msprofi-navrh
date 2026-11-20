@@ -862,17 +862,24 @@ a.od-cena-suma { text-decoration: none; }
 
 .kontakt + .kontakt { border-left: 1px solid #DDDDE8; }
 
-.kontakt-znak {
+.kontakt-hlava {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 52px;
-    height: 52px;
-    margin-bottom: 20px;
-    border-radius: 16px;
+    gap: 14px;
+    margin-bottom: 14px;
 }
 
-.kontakt-znak .ikona { width: 24px; height: 24px; }
+.kontakt-znak {
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+}
+
+.kontakt-znak .ikona { width: 22px; height: 22px; }
 .kontakt-ruzovy .kontakt-znak { background: var(--tint-ruzova); color: var(--cyan); }
 .kontakt-modry .kontakt-znak { background: var(--tint-modra); color: #0090BE; }
 .kontakt-sidlo .kontakt-znak { background: var(--tint-zelena); color: #689C00; }
